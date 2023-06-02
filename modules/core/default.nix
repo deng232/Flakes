@@ -16,6 +16,7 @@ in {
     modules =
     [(import ./bootloader.nix)]
     ++ [(import ./wayland.nix)]
-     ++ [(import ./system.nix)];
+    ++ [(import ./user.nix)]
+    ++ [(import ./system.nix)];
   };
 }
