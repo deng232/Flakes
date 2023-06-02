@@ -17,6 +17,7 @@ in {
     [(import ./bootloader.nix)]
     ++ [(import ./wayland.nix)]
     ++ [(import ./user.nix)]
+    ++ [(import ./security.nix)]
     ++ [(import ./programs.nix)]
     ++ [(import ./system.nix)];
   };
