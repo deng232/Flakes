@@ -75,17 +75,6 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.fahim = {
-    isNormalUser = true;
-    description = "Samiul Basir Fahim";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-git
-vscode
-pavucontrol
-    ];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
