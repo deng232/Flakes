@@ -14,6 +14,8 @@ in {
   nixos = nixpkgs.lib.nixosSystem {
     specialArgs = {inherit self inputs;};
     modules =
-      [(import ./config.nix)];
+    [(import ./bootloader.nix)]
+    ++ [(import ./wayland.nix)]
+     ++ [(import ./config.nix)];
   };
 }
