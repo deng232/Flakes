@@ -41,11 +41,11 @@
             force = true;
             default = "Google";
             engines = {
-              "NixOS Wiki" = {
-                urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+              "NixOS Search" = {
+                urls = [{ template = "https://search.nixos.org/packages?channel=23.05&from=0&size=50&sort=relevance&type=packages&query={searchTerms}"; }];
                 iconUpdateURL = "https://nixos.wiki/favicon.png";
                 updateInterval = 24 * 60 * 60 * 1000;
-                definedAliases = [ "@nw" ];
+                definedAliases = [ "@ns" ];
               };
               "Wikipedia (en)".metaData.alias = "@wiki";
               "Amazon.com".metaData.hidden = true;
@@ -60,13 +60,12 @@
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
             "browser.compactmode.show" = true;
           };
-          # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          #   ublock-origin
-          #   duckduckgo-privacy-essentials
-          #   languagetool
-          #   news-feed-eradicator
-
-          # ];
+          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+            ublock-origin
+            duckduckgo-privacy-essentials
+            languagetool
+            news-feed-eradicator
+          ];
           userChrome = builtins.readFile userChrome;
         };
       };

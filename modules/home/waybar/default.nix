@@ -7,7 +7,7 @@
     };
     style = ''
       * {
-      font-family: FiraCode Nerd Font;
+      font-family: JetBrainsMono Nerd Font;
       font-weight: normal;
       font-size: 13.5px;
       min-height: 0;
@@ -101,7 +101,7 @@
           "pulseaudio#microphone"
           "memory"
           "cpu"
-          "disk"
+          # "disk"
           "network"
           "tray"
         ];
@@ -162,21 +162,20 @@
         };
         "memory" = {
           "interval" = 1;
-          "format" = "󰨅 {percentage}%";
+          "format" = "󰟜 {percentage}%";
           "states" = {
             "warning" = 85;
           };
         };
         "cpu" = {
           "interval" = 1;
-          "format" = " {usage}%";
+          "format" ="󰍛 {usage}%";
         };
         "network" = {
           "interval" = 1;
-          # "format" = "說 Connected({ifname})";
-          "format" = "說 Connected";
+          "format" = "󰣺 Connected";
           "format-alt" = "  {bandwidthUpBytes}    {bandwidthDownBytes}";
-          "format-disconnected" = "說 Disconnected";
+          "format-disconnected" = "󰣼 Disconnected";
           "tooltip" = false;
         };
         "temperature" = {

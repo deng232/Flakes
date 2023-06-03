@@ -12,13 +12,13 @@ in {
     pkgs.noto-fonts
     pkgs.noto-fonts-cjk
     pkgs.noto-fonts-emoji
-    (pkgs.nerdfonts.override {fonts = ["FiraCode"];})
+    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
   xdg.dataFile."themes/matrix-gtk".source = matrix-gtk;
   gtk = {
     enable = true;
     font = {
-      name = "FiraCode Nerd Font";
+      name = "JetBrainsMono Nerd Font";
       size = 10.5;
     };
     iconTheme = {

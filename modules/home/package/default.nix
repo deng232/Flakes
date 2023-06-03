@@ -25,7 +25,9 @@
       rustup
       neovide
       gnumake
+      obsidian
       php
+
 
       # others
       aichat

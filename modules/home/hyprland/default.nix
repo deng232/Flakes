@@ -227,8 +227,8 @@
       exec-once = wl-paste --type text --watch cliphist store
       exec-once = wl-paste --type image --watch cliphist store
       exec-once = waybar &
-      exec-once = sleep .5 && webcord -m
-      exec-once = sleep 1 && pkill waybar && waybar
+      exec-once = sleep 1 && webcord -m
+      exec-once = sleep 3 && pkill waybar && waybar
     '';
   };
 }
