@@ -33,8 +33,8 @@
     systemdIntegration = true;
     extraConfig = ''
       $mainMod = SUPER
-      monitor = ,highrr,auto,1
-      monitor = ,highres,auto,1
+      # monitor = ,highrr,auto,1
+      # monitor = ,highres,auto,1
       input {
         kb_layout = us
         follow_mouse = 1
@@ -232,3 +232,4 @@
     '';
   };
 }
+

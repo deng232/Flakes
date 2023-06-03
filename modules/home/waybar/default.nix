@@ -70,15 +70,15 @@
       #disk,
       #idle_inhibitor
       {
-        padding-left: 8px;
-        padding-right: 8px;
+        padding-left: 6px;
+        padding-right: 6px;
         padding-top: 0px;
         padding-bottom: 0px;
         color: #B9B9B9;
       }
       #tray {
         padding-right: 8px;
-        padding-left: 13px;
+        padding-left: 12px;
       }
 
 
@@ -185,8 +185,8 @@
           "format" = " {temperatureC}°C";
         };
         "tray" = {
-          "icon-size" = 12;
-          "spacing" = 8;
+          "icon-size" = 13;
+          "spacing" = 5;
         };
       }
     ];
