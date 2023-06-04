@@ -1,11 +1,10 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
   imports =
-    [(import ./variables.nix)]
-    ++ [inputs.hyprland.homeManagerModules.default];
+    [ (import ./variables.nix) ]
+    ++ [ inputs.hyprland.homeManagerModules.default ];
   home.packages = with pkgs; [
     swww
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
@@ -22,7 +21,7 @@
     wayland
     direnv
   ];
-  systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];
+  systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland = {
@@ -33,77 +32,81 @@
     systemdIntegration = true;
     extraConfig = ''
       $mainMod = SUPER
-      # monitor = ,highrr,auto,1
-      # monitor = ,highres,auto,1
+      monitor = ,highrr,auto,1
+      monitor = ,highres,auto,1
+
+
       input {
-        kb_layout = us
-        follow_mouse = 1
+          kb_layout = us
+          numlock_by_default = true
+          follow_mouse = 0
+          sensitivity = 0
       }
+
 
       misc {
-        disable_hyprland_logo = true
-        disable_splash_rendering = true
-      #   disable_autoreload = true # autoreload is unnecessary on nixos
+          disable_autoreload = false
+          disable_hyprland_logo = true
+          always_follow_on_dnd = true
+          layers_hog_keyboard_focus = true
+          animate_manual_resizes = false
+          enable_swallow = true
+          swallow_regex =
+          focus_on_activate = true
       }
+
 
       general {
-        sensitivity = 1
-        gaps_in = 6
-        gaps_out= 10
-        border_size = 2
-        col.active_border = rgba(595959ff)
-        col.inactive_border = rgba(00140e10)
-        apply_sens_to_raw = 1
+          gaps_in = 6
+          gaps_out= 10
+          border_size = 2
+          col.active_border = rgba(595959ff)
+          col.inactive_border = rgba(00140e10)
+          apply_sens_to_raw = 1
       }
+
 
       dwindle {
-        no_gaps_when_only = false
-        force_split = 0
-        special_scale_factor = 0.8
-        split_width_multiplier = 1.0
-        use_active_for_splits = true
-        pseudotile = yes
-        preserve_split = yes
+          no_gaps_when_only = false
+          force_split = 0
+          special_scale_factor = 0.8
+          split_width_multiplier = 1.0
+          use_active_for_splits = true
+          pseudotile = yes
+          preserve_split = yes
       }
+
 
       master {
-        new_is_master = true
-        special_scale_factor = 1
-        no_gaps_when_only = false
+          new_is_master = true
+          special_scale_factor = 1
+          no_gaps_when_only = false
       }
 
+
       decoration {
-        rounding = 0
-        multisample_edges = true
-        blur_new_optimizations = 1
-        active_opacity = 0.8500;
-        inactive_opacity = 0.76;
-        blur = 1
-        blur_size = 2
-        blur_passes = 2
-        drop_shadow = 0
+          rounding = 0
+          multisample_edges = true
+          blur_new_optimizations = 1
+          active_opacity = 0.8500;
+          inactive_opacity = 0.76;
+          blur = 1
+          blur_size = 2
+          blur_passes = 2
+          drop_shadow = 0
       }
 
 
       animations {
-        # enabled = true
-        # bezier = smoothIn, 0.25, 1, 0.5, 1
-        # bezier = overshot, 0, 0, 0, 0
-        # animation = windows, 1, 3, overshot, slide
-        # animation = windowsOut, 1, 3, overshot, slide
-        # animation = border, 1, 5, overshot
-        # animation = fade, 1, 5, overshot
-        # animation = fadeDim, 1, 3, overshot
-        # animation = workspaces,1, 3,overshot,slide
-
-        bezier = overshot, 0.13, 0.99, 0.29, 1.1
-        bezier = overshot, 0.13, 0.99, 0.29, 1.1
-        animation = windows, 1, 4, overshot, slide
-        animation = windowsOut, 1, 5, default, popin 80%
-        animation = border, 1, 5, default
-        animation = fade, 1, 8, default
-        animation = workspaces, 1, 6, overshot, slide
+          enabled=1
+          bezier = overshot, 0.13, 0.99, 0.29, 1.1
+          animation = windows, 1, 4, overshot, slide
+          animation = windowsOut, 1, 5, default, popin 80%
+          animation = border, 1, 5, default
+          animation = fade, 1, 8, default
+          animation = workspaces, 1, 6, overshot, slidevert
       }
+
 
       # ----------------------------------------------------------------
       # keybindings
@@ -185,7 +188,6 @@
       # mouse binding
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
-
       # windowrule
       windowrule = float,wlogout
       windowrule = float,wofi
@@ -193,7 +195,6 @@
       windowrule = noanim,wofi
       windowrule = pin,wofi
       windowrule = noborder,wofi
-
       windowrule = tile, neovide
       windowrule = idleinhibit focus,mpv
       windowrule = float,udiskie
@@ -215,8 +216,6 @@
       windowrulev2 = idleinhibit focus, class:^(mpv)$
       windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
       windowrule = workspace 9 silent,webcord
-
-
       # autostart
       exec-once = hyprctl setcursor Catppuccin-Frappe-Dark 16
       exec-once = systemctl --user import-environment &
@@ -232,4 +231,3 @@
     '';
   };
 }
-

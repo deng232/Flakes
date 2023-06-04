@@ -1,7 +1,7 @@
 { inputs, ... }: {
   imports =
     [ (import ./waybar) ]
-    # ++ [ (import ./hyprland) ]
+    ++ [ (import ./hyprland) ]
     ++ [ (import ./foot) ]
     ++ [ (import ./swaylock) ]
     ++ [ (import ./wofi) ]
