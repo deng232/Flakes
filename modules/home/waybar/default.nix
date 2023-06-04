@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.waybar = {
     enable = true;
     systemd = {
@@ -6,80 +6,91 @@
       target = "graphical-session.target";
     };
     style = ''
-      * {
-      font-family: JetBrainsMono Nerd Font;
-      font-weight: normal;
-      font-size: 13.5px;
-      min-height: 0;
-      transition-property: background-color;
-      transition-duration: 0.5s;
-      }
-      window#waybar {
-        background-color: transparent;
-      }
-      window > box {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 8px;
-        border: 2px solid #595959;
-        border-radius: 0px;
-        background-color: rgba(31, 31, 31, 0.9);
-      }
-      #workspaces {
-        padding-left: 0px;
-        padding-right: 4px;
-        border-radius: 0px;
-      }
-      #workspaces button {
-        padding-top: 5px;
-        border-radius: 0px;
-        padding-bottom: 5px;
-        padding-left: 8px;
-        padding-right: 8px;
-      }
-      #workspaces button.active {
-        background-color: #595959;
-        color: rgb(23, 23, 23);
-      }
-      #workspaces button.urgent {
-        color: #fff000;
-      }
-      tooltip {
-        background: rgb(48, 45, 65);
-      }
-      tooltip label {
-        color: rgb(217, 224, 238);
-      }
-      #custom-launcher {
-        font-size: 16px;
-        padding-left: 8px;
-        padding-right: 6px;
-        color: #B9B9B9;
-      }
-      #clock,
-      #memory,
-      #temperature,
-      #cpu,
-      #mpd,
-      #custom-wall,
-      #temperature,
-      #backlight,
-      #pulseaudio,
-      #network,
-      #battery,
-      #disk,
-      #idle_inhibitor
-      {
-        padding-left: 6px;
-        padding-right: 6px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        color: #B9B9B9;
-      }
-      #tray {
-        padding-right: 8px;
-        padding-left: 12px;
-      }
+
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-weight: normal;
+    font-size: 14.5px;
+    min-height: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+window>box {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    border-bottom: 2px solid #595959;
+    border-radius: 0px;
+    background-color: rgba(31, 31, 31, 0.9);
+}
+
+#workspaces {
+    padding-left: 0px;
+    padding-right: 4px;
+    border-radius: 0px;
+}
+
+#workspaces button {
+    padding-top: 5px;
+    border-radius: 0px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#workspaces button.active {
+    background-color: #595959;
+    color: rgb(23, 23, 23);
+}
+
+#workspaces button.urgent {
+    color: #fff000;
+}
+
+tooltip {
+    background: rgb(48, 45, 65);
+}
+
+tooltip label {
+    color: rgb(217, 224, 238);
+}
+
+#custom-launcher {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 6px;
+    color: #6896BA;
+}
+
+#clock,
+#memory,
+#temperature,
+#cpu,
+#mpd,
+#custom-wall,
+#temperature,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#disk,
+#idle_inhibitor {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #B9B9B9;
+}
+
+#tray {
+    padding-right: 8px;
+    padding-left: 10px;
+}
 
 
     '';
@@ -137,7 +148,7 @@
           "format" = "{icon} {volume}%";
           "format-muted" = "󰸈 Muted";
           "format-icons" = {
-            "default" = ["" "" "󱄠"];
+            "default" = [ "" "" "󱄠" ];
           };
           "on-click" = "pamixer -t";
           "on-click-right" = "pavucontrol";
@@ -169,7 +180,7 @@
         };
         "cpu" = {
           "interval" = 1;
-          "format" ="󰍛 {usage}%";
+          "format" = "󰍛 {usage}%";
         };
         "network" = {
           "interval" = 1;
@@ -192,6 +203,6 @@
     ];
   };
   programs.waybar.package = pkgs.waybar.overrideAttrs (oa: {
-    mesonFlags = (oa.mesonFlags or []) ++ ["-Dexperimental=true"];
+    mesonFlags = (oa.mesonFlags or [ ]) ++ [ "-Dexperimental=true" ];
   });
 }
