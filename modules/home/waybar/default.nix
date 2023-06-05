@@ -6,93 +6,93 @@
       target = "graphical-session.target";
     };
     style = ''
+      * {
+          font-family: JetBrainsMono Nerd Font;
+          font-weight: normal;
+          font-size: 14px;
+          min-height: 0;
+          transition-property: background-color;
+          transition-duration: 0.5s;
+      }
 
-* {
-    font-family: JetBrainsMono Nerd Font;
-    font-weight: normal;
-    font-size: 14.5px;
-    min-height: 0;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-}
+      window#waybar {
+          background-color: transparent;
+      }
 
-window#waybar {
-    background-color: transparent;
-}
+      window>box {
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-top: 8px;
+          border: 2px solid #595959;
+          border-radius: 0px;
+          background-color: rgba(31, 31, 31, 0.9);
+      }
 
-window>box {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    border-bottom: 2px solid #595959;
-    border-radius: 0px;
-    background-color: rgba(31, 31, 31, 0.9);
-}
+      #workspaces {
+          padding-left: 0px;
+          padding-right: 4px;
+          border-radius: 0px;
+      }
 
-#workspaces {
-    padding-left: 0px;
-    padding-right: 4px;
-    border-radius: 0px;
-}
+      #workspaces button {
+          padding-top: 5px;
+          border-radius: 0px;
+          padding-bottom: 5px;
+          padding-left: 8px;
+          padding-right: 8px;
+      }
 
-#workspaces button {
-    padding-top: 5px;
-    border-radius: 0px;
-    padding-bottom: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
+      #workspaces button.active {
+          background-color: #595959;
+          color: rgb(23, 23, 23);
+      }
 
-#workspaces button.active {
-    background-color: #595959;
-    color: rgb(23, 23, 23);
-}
+      #workspaces button.urgent {
+          color: #fff000;
+      }
 
-#workspaces button.urgent {
-    color: #fff000;
-}
+      tooltip {
+          background: rgb(48, 45, 65);
+      }
 
-tooltip {
-    background: rgb(48, 45, 65);
-}
+      tooltip label {
+          color: rgb(217, 224, 238);
+      }
 
-tooltip label {
-    color: rgb(217, 224, 238);
-}
+      #custom-launcher {
+          font-size: 16px;
+          padding-left: 10px;
+          padding-right: 6px;
+          color: #6896BA;
+      }
 
-#custom-launcher {
-    font-size: 16px;
-    padding-left: 10px;
-    padding-right: 6px;
-    color: #6896BA;
-}
-
-#clock,
-#memory,
-#temperature,
-#cpu,
-#mpd,
-#custom-wall,
-#temperature,
-#backlight,
-#pulseaudio,
-#network,
-#battery,
-#disk,
-#idle_inhibitor {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    color: #B9B9B9;
-}
-
-#tray {
-    padding-right: 8px;
-    padding-left: 10px;
-}
-
-
+      #clock,
+      #memory,
+      #temperature,
+      #cpu,
+      #mpd,
+      #custom-wall,
+      #temperature,
+      #backlight,
+      #pulseaudio,
+      #network,
+      #battery,
+      #disk,
+      #idle_inhibitor {
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          color: #B9B9B9;
+      }
+      #cava {
+        padding-left: 10px;
+        padding-right: 8px;
+      }
+      #tray {
+          padding-right: 8px;
+          padding-left: 10px;
+      }
     '';
     settings = [
       {
@@ -112,9 +112,11 @@ tooltip label {
           "pulseaudio#microphone"
           "memory"
           "cpu"
-          # "disk"
+          "disk"
+          # "keyboard-state"
           "network"
-          "tray"
+          "cava"
+          # "tray"
         ];
         "custom/launcher" = {
           "format" = " ";
@@ -180,7 +182,7 @@ tooltip label {
         };
         "cpu" = {
           "interval" = 1;
-          "format" = "󰍛 {usage}%";
+          "format" = "󰇖 {usage}%";
         };
         "network" = {
           "interval" = 1;
@@ -195,8 +197,29 @@ tooltip label {
           "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
           "format" = " {temperatureC}°C";
         };
+        "cava" = {
+          "framerate" = 60;
+          "autosens" = 1;
+          "sensitivity" = 10;
+          "bars" = 6;
+          "lower_cutoff_freq" = 50;
+          "higher_cutoff_freq" = 10000;
+          "method" = "pulse";
+          "source" = "auto";
+          "stereo" = true;
+          "reverse" = false;
+          "bar_delimiter" = 0;
+          "monstercat" = false;
+          "waves" = false;
+          "noise_reduction" = 0.77;
+          "input_delay" = 2;
+          "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          "actions" = {
+            "on-click-right" = "mode";
+          };
+        };
         "tray" = {
-          "icon-size" = 13;
+          "icon-size" = 12;
           "spacing" = 5;
         };
       }
