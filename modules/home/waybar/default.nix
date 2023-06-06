@@ -87,7 +87,7 @@
       }
       #cava {
         padding-left: 10px;
-        padding-right: 8px;
+        padding-right: 10px;
       }
       #tray {
           padding-right: 8px;
@@ -116,7 +116,7 @@
           # "keyboard-state"
           "network"
           "cava"
-          # "tray"
+          "tray"
         ];
         "custom/launcher" = {
           "format" = " ";
@@ -214,9 +214,7 @@
           "noise_reduction" = 0.77;
           "input_delay" = 2;
           "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-          "actions" = {
-            "on-click-right" = "mode";
-          };
+          "on-click-right" = "playerctl play-pause";
         };
         "tray" = {
           "icon-size" = 12;

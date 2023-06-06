@@ -45,7 +45,7 @@
 
 
       misc {
-          disable_autoreload = false
+          disable_autoreload = true
           disable_hyprland_logo = true
           always_follow_on_dnd = true
           layers_hog_keyboard_focus = true
@@ -226,8 +226,8 @@
       exec-once = wl-paste --type text --watch cliphist store
       exec-once = wl-paste --type image --watch cliphist store
       exec-once = waybar &
-      exec-once = sleep 1 && webcord -m
-      exec-once = sleep 3 && pkill waybar && waybar
+      exec-once = sleep 4 && webcord -m &
+      exec-once = sleep 6 && pkill waybar && waybar
     '';
   };
 }
