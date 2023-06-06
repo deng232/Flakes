@@ -5,20 +5,20 @@
     "keybind" : "l"
 }
 {
-    "label" : "reboot",
-    "action" : "systemctl reboot",
-    "text" : "Reboot",
-    "keybind" : "r"
+    "label": "reboot",
+    "action": "systemctl reboot",
+    "text": "Reboot",
+    "keybind": "r"
 }
 {
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "Suspend",
+    "label": "logout",
+    "action": "loginctl terminate-user $USER",
+    "text": "Logout",
+    "keybind": "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "sudo systemctl shutdown",
+    "text" : "Shut Down",
     "keybind" : "s"
-}
-{
-    "label" : "logout",
-    "action" : "loginctl terminate-user $USER",
-    "text" : "Logout",
-    "keybind" : "e"
 }
