@@ -62,9 +62,10 @@
           };
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             ublock-origin
-            duckduckgo-privacy-essentials
+            # duckduckgo-privacy-essentials
             languagetool
             news-feed-eradicator
+            tabliss
           ];
           userChrome = builtins.readFile userChrome;
         };

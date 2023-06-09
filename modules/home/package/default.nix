@@ -27,7 +27,7 @@
       gnumake
       obsidian
       php
-
+      gh
 
       # others
       aichat
