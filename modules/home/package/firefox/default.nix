@@ -66,6 +66,7 @@
             languagetool
             news-feed-eradicator
             tabliss
+            videospeed
           ];
           userChrome = builtins.readFile userChrome;
         };

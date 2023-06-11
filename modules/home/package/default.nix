@@ -60,7 +60,6 @@
       bore-cli
       webcord
       google-chrome
-      electrum
       exa
       figlet
       macchina
