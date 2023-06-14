@@ -24,8 +24,8 @@
       ls = "exa --icons";
 
       # nixos
-      ncg = "nix-collect-garbage && nix-collect-garbage -d && doas nix-collect-garbage && doas nix-collect-garbage -d && doas rm /nix/var/nix/gcroots/auto/*";
-      nrf = "doas nixos-rebuild switch --flake ~/Flakes/.#nixos";
+      ncg = "nix-collect-garbage && nix-collect-garbage -d && sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";
+      nrf = "sudo nixos-rebuild switch --flake ~/Flakes/.#nixos";
       fl = "cd ~/Flakes/ && v";
 
       # python
