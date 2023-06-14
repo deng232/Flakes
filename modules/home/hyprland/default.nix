@@ -216,18 +216,18 @@
       windowrulev2 = idleinhibit focus, class:^(mpv)$
       windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
       windowrule = workspace 9 silent,webcord
+
+      
       # autostart
       exec-once = hyprctl setcursor Catppuccin-Frappe-Dark 16
       exec-once = systemctl --user import-environment &
       exec-once = hash dbus-update-activation-environment 2>/dev/null &
       exec-once = dbus-update-activation-environment --systemd &
-      exec-once = swww init && sleep 0.1 && bash load-env && sleep 0.1 && swaylock && notify-send "Hey $USER, Welcome back" &
+      exec-once = swww init && sleep 0.1 && bash load-env && sleep 0.1 && swaylock && notify-send "Hey $USER, Welcome back" && webcord -m &
       exec-once = mako &
       exec-once = wl-paste --type text --watch cliphist store &
       exec-once = wl-paste --type image --watch cliphist store &
       exec-once = waybar &
-      exec-once = sleep 3 && webcord -m &
-      exec-once = sleep 5 && pkill waybar && waybar &
     '';
   };
 }

@@ -3,7 +3,6 @@
 , ...
 }: {
   imports = [ (import ./firefox) ];
-  #    [ (import ./python.nix) ];
 
   home.packages =
     let
@@ -49,6 +48,6 @@
       inputs.alejandra.defaultPackage.${system}
     ]
     ++ [
-      
+
     ]);
 }
