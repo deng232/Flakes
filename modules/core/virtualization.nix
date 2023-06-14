@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
-  # Enable dconf (System Management Tool)
-  programs.dconf.enable = true;
-
   # Add user to libvirtd group
   users.users.fahim.extraGroups = [ "libvirtd" ];
 
@@ -23,8 +19,8 @@
 
   # Manage the virtualisation services
   virtualisation = {
-    waydroid.enable = true;
-    lxd.enable = true;
+    # waydroid.enable = true;
+    # lxd.enable = true;
     libvirtd = {
       enable = true;
       qemu = {
@@ -36,5 +32,4 @@
     spiceUSBRedirection.enable = true;
   };
   services.spice-vdagentd.enable = true;
-
 }

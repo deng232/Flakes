@@ -14,7 +14,7 @@ in
 {
   nixos = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit self inputs; };
-    modules = 
+    modules =
       [ (import ./bootloader.nix) ]
       ++ [ (import ./hardware.nix) ]
       ++ [ (import ./network.nix) ]
@@ -26,7 +26,7 @@ in
       ++ [ (import ./system.nix) ]
       ++ [ (import ./user.nix) ]
       ++ [ (import ./wayland.nix) ]
-      ++ [ (import ./cloudflare-warp.nix) ]
+      # ++ [ (import ./cloudflare-warp.nix) ]
       ++ [ (import ./virtualization.nix) ]
       ++ [ (import ./../../hosts/nixos/hardware-configuration.nix) ];
   };
