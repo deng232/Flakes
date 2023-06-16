@@ -16,7 +16,7 @@ in
     specialArgs = { inherit self inputs; };
     modules =
       [ (import ./bootloader.nix) ]
-      # ++ [ (import ./hardware.nix) ]
+      ++ [ (import ./hardware.nix) ]
       ++ [ (import ./network.nix) ]
       ++ [ (import ./pipewire.nix) ]
       ++ [ (import ./program.nix) ]

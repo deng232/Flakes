@@ -36,11 +36,6 @@ in
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
   };
-  security.doas.extraRules = [
-    {
-      users = [ "fahim" ];
-    }
-  ];
   users.users.root.initialPassword = initialPassword;
   services.getty.autologinUser = "fahim";
   nix.settings.allowed-users = [ "fahim" ];

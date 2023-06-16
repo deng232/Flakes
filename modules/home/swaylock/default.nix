@@ -5,10 +5,10 @@
   inputs,
   ...
 }: {
-  # home.packages = with pkgs; [swaylock-effects];
-  # swaylock effect not installing thats why i installed it by nix-env...
-
+  home.packages = with pkgs; [swaylock-effects];
+  
   programs.swaylock = {
+    enable = false;
     settings = {
       clock = true;
       screenshots = true;
