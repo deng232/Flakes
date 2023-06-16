@@ -23,9 +23,6 @@ in
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "22.11";
       programs.home-manager.enable = true;
-      programs.git.enable = true;
-      programs.git.userName = name;
-      programs.git.userEmail = email;
     };
   };
 

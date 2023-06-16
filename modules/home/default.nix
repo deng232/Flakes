@@ -2,6 +2,7 @@
   imports =
     [ (import ./waybar) ]
     ++ [ (import ./hyprland) ]
+    ++ [ (import ./git) ]
     ++ [ (import ./foot) ]
     ++ [ (import ./swaylock) ]
     ++ [ (import ./wofi) ]

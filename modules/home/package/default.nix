@@ -22,7 +22,6 @@
       ripgrep
       rustup
       php
-      gh
 
       # others
       openssl
