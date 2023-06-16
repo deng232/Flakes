@@ -22,7 +22,6 @@
     direnv
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
-  programs.nm-applet.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland = {

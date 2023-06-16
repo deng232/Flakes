@@ -43,6 +43,7 @@
       ffmpeg
       bore-cli
       webcord
+      tdesktop
       exa
       inputs.alejandra.defaultPackage.${system}
     ]
