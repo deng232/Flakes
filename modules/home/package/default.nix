@@ -46,6 +46,7 @@
       tdesktop
       exa
       inputs.alejandra.defaultPackage.${system}
+      google-chrome
     ]
     ++ [
 

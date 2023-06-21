@@ -65,7 +65,6 @@
     if [[ -d $wallpaper_folder/$wallpaper_location ]]; then
         wallpaper_temp="$wallpaper_location"
     elif [[ -f $wallpaper_folder/$wallpaper_location ]]; then
-      echo "swww img $wallpaper_folder/$wallpaper_temp/$wallpaper_location" > ~/.local/bin/env/wallpaper
     	wall-change $wallpaper_folder/$wallpaper_temp/$wallpaper_location
     else
         exit 1
