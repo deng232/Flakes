@@ -2,7 +2,7 @@
 , pkgs
 , ...
 }: {
-  imports = [ (import ./firefox) ];
+  imports = [ (import ./firefox) ] ++ [ (import ./vscode) ];
 
   home.packages =
     let
@@ -16,7 +16,6 @@
       nodePackages.nodemon
       yarn
       nix-prefetch-github
-      vscode
       typescript
       rnix-lsp
       ripgrep
