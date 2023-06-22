@@ -2,7 +2,9 @@
 , pkgs
 , ...
 }: {
-  imports = [ (import ./firefox) ] ++ [ (import ./vscode) ];
+  imports = [ (import ./firefox) ]
+    ++ [ (import ./vscode) ];
+  # 
 
   home.packages =
     let
