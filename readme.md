@@ -13,9 +13,9 @@
 <br>
 <br>
 
-<div style="display:flex">
-<img width="50%" style="border-radius:2%; margin:3px;" src="https://github.com/samiulbasirfahim/Flakes/assets/122826532/9c08b084-010b-45cd-8539-73ce76e5912f" />
-<img width="50%" style="border-radius:5%; margin:3px;" src="https://github.com/samiulbasirfahim/Flakes/assets/122826532/bb9ecff7-cc9f-4b03-9ebe-8a6ddf551a18" />
+<div>
+<img align=top style="border-radius:2%; margin:3px;" src="https://github.com/samiulbasirfahim/Flakes/assets/122826532/9c08b084-010b-45cd-8539-73ce76e5912f" />
+<img align=top style="border-radius:5%; margin:3px;" src="https://github.com/samiulbasirfahim/Flakes/assets/122826532/bb9ecff7-cc9f-4b03-9ebe-8a6ddf551a18" />
 </div>
 
 <div style="display:flex">
