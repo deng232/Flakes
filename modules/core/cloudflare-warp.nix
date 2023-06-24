@@ -11,7 +11,6 @@
   ];
 
   systemd.services."warp-svc".wantedBy = [ "multi-user.target" ];
-  systemd.user.services."warp-taskbar".wantedBy = [ "graphical-session.target" ];
 
   environment.systemPackages = with pkgs;[
   (cloudflare-warp.overrideAttrs (old: {
