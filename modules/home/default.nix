@@ -1,6 +1,8 @@
 { inputs, ... }: {
   imports =
     [ (import ./waybar) ]
+    # ++ [ (import ./firefox) ]
+    # ++ [ (import ./vscode) ]
     ++ [ (import ./hyprland) ]
     ++ [ (import ./git) ]
     ++ [ (import ./foot) ]
@@ -15,4 +17,5 @@
     ++ [ (import ./wlogout) ]
     ++ [ (import ./nvim) ]
     ++ [ (import ./package) ];
+
 }

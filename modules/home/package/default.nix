@@ -2,10 +2,6 @@
 , pkgs
 , ...
 }: {
-  imports = [ (import ./firefox) ];
-  # ++ [ (import ./vscode) ];
-  
-
   home.packages =
     let
       php = pkgs.php.buildEnv { extraConfig = "memory_limit = 2G"; };

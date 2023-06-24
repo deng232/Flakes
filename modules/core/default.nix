@@ -28,6 +28,7 @@ in
       ++ [ (import ./wayland.nix) ]
       ++ [ (import ./cloudflare-warp.nix) ]
       ++ [ (import ./virtualization.nix) ]
-      ++ [ (import ./../../hosts/nixos/hardware-configuration.nix) ];
+      ++ [ (import ./../../hosts/nixos/hardware-configuration.nix) ]
+    ;
   };
 }

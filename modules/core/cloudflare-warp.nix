@@ -4,7 +4,6 @@
       src = pkgs.fetchurl {
         url = "https://pkg.cloudflareclient.com/pool/jammy/main/c/cloudflare-warp/cloudflare-warp_2023.3.470-1_amd64.deb";
         sha256 = "sha256-AYnmisEQKFiEB2iRJifEqRbdzAyBcfrU0ITeUokKLag=";
-        # sha256 = lib.fakeHash;
       };
       unpackPhase = null;
     }))
@@ -17,7 +16,6 @@
       src = pkgs.fetchurl {
         url = "https://pkg.cloudflareclient.com/pool/jammy/main/c/cloudflare-warp/cloudflare-warp_2023.3.470-1_amd64.deb";
         sha256 = "sha256-AYnmisEQKFiEB2iRJifEqRbdzAyBcfrU0ITeUokKLag=";
-        # sha256 = lib.fakeHash;
       };
       unpackPhase = null;
     }))
