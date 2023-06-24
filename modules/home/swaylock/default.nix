@@ -8,6 +8,7 @@
   # home.packages = with pkgs; [swaylock-effects];
   
   programs.swaylock = {
+    enable = false;
     settings = {
       clock = true;
       screenshots = true;
