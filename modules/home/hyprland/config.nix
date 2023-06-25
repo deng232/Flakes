@@ -1,6 +1,11 @@
-{ ... }: {
+{ ... }:
+let
+  color = (import ../../variables/colors.nix);
+  window_manager = (import ../../variables/window_manager.nix);
+in
+{
   wayland.windowManager.hyprland = {
-    extraConfig = ''
+    extraConfig = "
       $mainMod = SUPER
       monitor = ,highrr,auto,1
       monitor = ,highres,auto,1
@@ -28,7 +33,7 @@
 
       general {
           gaps_in = 6
-          gaps_out= 10
+          gaps_out = 10
           border_size = 2
           col.active_border = rgba(595959ff)
           col.inactive_border = rgba(00140e10)
@@ -102,7 +107,7 @@
       bind = $mainMod, A,exec, toggle-animation
       bind = $mainMod, D,exec, toggle-blur
       # screenshot
-      bind = ,Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date "+%Y-%m-%d"T"%H:%M:%S").png
+      bind = ,Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date ' + %Y-%m-%d ' T '%H:%M:%S ').png
       bind = $mainMod, Print, exec, grimblast --notify --cursor  copy area
       # switch focus
       bind = $mainMod, left, movefocus, l
@@ -193,12 +198,9 @@
       exec-once = systemctl --user import-environment &
       exec-once = hash dbus-update-activation-environment 2>/dev/null &
       exec-once = dbus-update-activation-environment --systemd &
-      exec-once = swww init &&  notify-send "Hey $USER, Welcome back" && webcord -m &
-      exec-once = mako &
-      exec-once = load-env &
-      exec-once = wl-paste --type text --watch cliphist store &
-      exec-once = wl-paste --type image --watch cliphist store &
+      exec-once = swww init &&  notify-send 'Hey $USER, Welcome back' && load-env && mako && sleep 2 && webcord -m &
+      exec-once = wl-paste --type text --watch cliphist store && wl-paste --type image --watch cliphist store &
       exec-once = waybar &
-    '';
+    ";
   };
 }
