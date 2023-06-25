@@ -1,9 +1,10 @@
 { inputs, ... }: {
   imports =
     [ (import ./waybar) ]
-    # ++ [ (import ./firefox) ]
+     ++ [ (import ./firefox) ]
     # ++ [ (import ./vscode) ]
     ++ [ (import ./hyprland) ]
+    ++ [ (import ./i3) ]
     ++ [ (import ./git) ]
     ++ [ (import ./foot) ]
     ++ [ (import ./swaylock) ]
