@@ -3,11 +3,7 @@
     enable = true;
     layout = "us";
     videoDrivers = [ "amdgpu" ];
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-      autoLogin = { enable = true; user = "fahim"; };
-    };
+    windowManager.i3.enable = true;
     libinput = {
       enable = true;
       mouse = {

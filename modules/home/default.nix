@@ -9,7 +9,7 @@
     ++ [ (import ./foot) ]
     ++ [ (import ./swaylock) ]
     ++ [ (import ./wofi) ]
-    ++ [ (import ./fish) ]
+    ++ [ (import ./zsh) ]
     ++ [ (import ./gtk) ]
     ++ [ (import ./mako) ]
     ++ [ (import ./scripts) ]

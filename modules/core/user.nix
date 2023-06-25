@@ -31,9 +31,9 @@ in
     initialPassword = initialPassword;
     description = name;
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
   users.users.root.initialPassword = initialPassword;
-  services.getty.autologinUser = "fahim";
+  # services.getty.autologinUser = "fahim";
   nix.settings.allowed-users = [ "fahim" ];
 }
