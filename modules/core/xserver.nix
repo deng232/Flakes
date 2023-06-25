@@ -3,7 +3,10 @@
     enable = true;
     layout = "us";
     videoDrivers = [ "amdgpu" ];
-    windowManager.i3.enable = true;
+    displayManager.autoLogin = {
+      enable = true;
+      user = "fahim";
+    };
     libinput = {
       enable = true;
       mouse = {

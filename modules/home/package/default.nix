@@ -40,11 +40,9 @@
       fzf
       ffmpeg
       bore-cli
-      webcord
-      tdesktop
+      discord
       exa
       inputs.alejandra.defaultPackage.${system}
-      google-chrome
     ]
     ++ [
 
