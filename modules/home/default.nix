@@ -5,7 +5,7 @@
     # ++ [ (import ./vscode) ]
     ++ [ (import ./chromium) ]
     ++ [ (import ./hyprland) ]
-    # ++ [ (import ./i3) ]
+    ++ [ (import ./gaming) ]
     ++ [ (import ./git) ]
     ++ [ (import ./foot) ]
     ++ [ (import ./swaylock) ]

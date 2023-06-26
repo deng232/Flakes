@@ -18,6 +18,7 @@ in
       [ (import ./bootloader.nix) ]
       ++ [ (import ./hardware.nix) ]
       ++ [ (import ./xserver.nix) ]
+      ++ [ (import ./steam.nix) ]
       ++ [ (import ./network.nix) ]
       ++ [ (import ./pipewire.nix) ]
       ++ [ (import ./program.nix) ]
