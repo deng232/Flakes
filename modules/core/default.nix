@@ -1,6 +1,8 @@
 { inputs
 , nixpkgs
 , self
+,
+username, email, initialPassword
 , ...
 }:
 let
@@ -13,7 +15,7 @@ let
 in
 {
   nixos = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs; };
+    specialArgs = { inherit self inputs username email initialPassword; };
     modules =
       [ (import ./bootloader.nix) ]
       ++ [ (import ./hardware.nix) ]

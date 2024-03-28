@@ -61,13 +61,19 @@ in
 
       decoration {
           rounding = 0
-          multisample_edges = true
-          blur_new_optimizations = 1
+
+
           active_opacity = 0.8500;
           inactive_opacity = 0.76;
-          blur = 1
-          blur_size = 2
-          blur_passes = 2
+
+          blur {
+            enable = true
+            size = 2
+            passes = 2
+            new_optimizations = true
+
+          }
+
           drop_shadow = 0
       }
 
@@ -191,13 +197,13 @@ in
       windowrulev2 = idleinhibit focus, class:^(mpv)$
       windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
 
-      
+
       # autostart
       exec-once = hyprctl setcursor Catppuccin-Frappe-Dark 16
       exec-once = systemctl --user import-environment &
       exec-once = hash dbus-update-activation-environment 2>/dev/null &
       exec-once = dbus-update-activation-environment --systemd &
-      exec-once = swww init && swaylock && notify-send 'Hey $USER, Welcome back' && load-env 
+      exec-once = swww init && swaylock && notify-send 'Hey $USER, Welcome back' && load-env
       exec-once = wl-paste --type text --watch cliphist store && wl-paste --type image --watch cliphist store && mako &
       exec-once = waybar &
     ";

@@ -24,11 +24,15 @@
     } @ inputs:
     let
       selfPkgs = import ./pkgs;
+        name = "Samiul Basir Fahim";
+        username = "deng";
+        email = "deng232@purdue.edu";
+        initialPassword = "dreamX";
     in
     {
       overlays.default = selfPkgs.overlay;
       nixosConfigurations = import ./modules/core/default.nix {
-        inherit self nixpkgs inputs;
+         inherit self nixpkgs inputs username email initialPassword;
       };
     };
 }

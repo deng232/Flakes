@@ -1,12 +1,11 @@
 { pkgs
-, inputs
+, inputs,
+username ,email, initialPassword,
+config
 , ...
 }:
 let
   name = "Samiul Basir Fahim";
-  username = "fahim";
-  email = "samiulbasirfahim360@gmail.com";
-  initialPassword = "dreamX";
   packages = with pkgs; [
     fish
   ];
@@ -16,7 +15,7 @@ in
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs;};
     users.${username} = {
       imports = [ (import ./../home) ];
       home.username = username;
@@ -35,5 +34,5 @@ in
   };
   users.users.root.initialPassword = initialPassword;
   # services.getty.autologinUser = "fahim";
-  nix.settings.allowed-users = [ "fahim" ];
+  #nix.settings.allowed-users = [ "deng" ];
 }

@@ -15,11 +15,10 @@
       yarn
       nix-prefetch-github
       typescript
-      rnix-lsp
       ripgrep
       rustup
       php
-      vscode
+      #vscode
 
       # others
       openssl
@@ -41,10 +40,9 @@
       ffmpeg
       bore-cli
       discord
-      exa
       inputs.alejandra.defaultPackage.${system}
-    ]
-    ++ [
 
+      #gameing?
+      #proton-ge-bin
     ]);
 }

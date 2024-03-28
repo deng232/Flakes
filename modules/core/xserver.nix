@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs,username, ... }: {
   services.xserver = {
     enable = true;
-    layout = "us";
-    videoDrivers = [ "amdgpu" ];
+    xkb.layout = "us";
+    #videoDrivers = [ "amdgpu" ];
     displayManager.autoLogin = {
       enable = true;
-      user = "fahim";
+      user = username;
     };
     libinput = {
       enable = true;
