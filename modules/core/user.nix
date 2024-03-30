@@ -32,7 +32,7 @@ in
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
-  users.users.root.initialPassword = initialPassword;
+  users.users.root.initialPassword = "123456789";
   # services.getty.autologinUser = "fahim";
   #nix.settings.allowed-users = [ "deng" ];
 }
