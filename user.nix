@@ -1,7 +1,8 @@
 { pkgs
 , inputs,
-username ,email, initialPassword,
 config
+,
+primary_user
 , ...
 }:
 let
@@ -25,13 +26,8 @@ in
     };
   };
 
-  users.users.${username} = {
-    isNormalUser = true;
-    initialPassword = initialPassword;
-    description = name;
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-  };
+  users.users = primary_user;
+
   users.users.root.initialPassword = "123456789";
   # services.getty.autologinUser = "fahim";
   #nix.settings.allowed-users = [ "deng" ];
