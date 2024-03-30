@@ -1,14 +1,9 @@
 { ... }:
-let
-  color = (import ../../variables/colors.nix);
-  window_manager = (import ../../variables/window_manager.nix);
-in
 {
   wayland.windowManager.hyprland = {
     extraConfig = "
       $mainMod = SUPER
-      monitor = ,highrr,auto,1
-      monitor = ,highres,auto,1
+      monitor=,1920x1080,auto,auto
 
 
       input {
@@ -67,7 +62,8 @@ in
           inactive_opacity = 0.76;
 
           blur {
-            enable = true
+
+            enabled = true
             size = 2
             passes = 2
             new_optimizations = true

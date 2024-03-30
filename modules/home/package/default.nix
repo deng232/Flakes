@@ -3,43 +3,35 @@
 , ...
 }: {
   home.packages =
-    let
-      php = pkgs.php.buildEnv { extraConfig = "memory_limit = 2G"; };
-    in
     (with pkgs;
     [
       # programming
-      python39
+      python313
       nodejs
-      nodePackages.nodemon
-      yarn
-      nix-prefetch-github
       typescript
       ripgrep
       rustup
-      php
       #vscode
 
       # others
       openssl
-      libnotify
-      pamixer
-      xfce.thunar
-      pavucontrol
+      libnotify # A library that sends desktop notifications to a notification daemon
+      pamixer #Pulseaudio command line mixer
+      xfce.thunar # Xfce file manager
+      pavucontrol # PulseAudio Volume Control
       wget
       unzip
       gparted
-      mpv
-      playerctl
-      qalculate-gtk
-      bleachbit
-      imv
-      htop
-      xdg-utils
-      fzf
+      mpv # General-purpose media player, fork of MPlayer and mplayer2
+      playerctl #Command-line utility and library for controlling media players that implement MPRIS
+      bleachbit # A program to clean your computer
+      imv #A command line image viewer for tiling window managers
+      htop # An interactive process viewer
+      #xdg-utils
+      fzf #fuzzy finder
       ffmpeg
-      bore-cli
       discord
+      exa #ls replacement
       inputs.alejandra.defaultPackage.${system}
 
       #gameing?
