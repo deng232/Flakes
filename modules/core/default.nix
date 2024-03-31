@@ -1,5 +1,5 @@
 
-{ hostname, ... }:
+{ hostname,primary_user, ... }:
 {
   imports = [
     ./hardware.nix
@@ -16,4 +16,5 @@
     ./cloudflare-warp.nix
     (./. + "/${hostname}")
   ];
+  users.users.${primary_user.name} = primary_user;
 }

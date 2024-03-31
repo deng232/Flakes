@@ -18,7 +18,7 @@
       v = "nvim";
       record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
       ani = "bash $HOME/.local/bin/anime --dub";
-      ls = "exa --icons --long";
+      ls = "eza --icons --long";
 
       # nixos
       ncg = "nix-collect-garbage && nix-collect-garbage -d && sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/*";

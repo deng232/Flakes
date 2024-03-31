@@ -31,7 +31,7 @@
       fzf #fuzzy finder
       ffmpeg
       discord
-      exa #ls replacement
+      eza #ls replacement
       inputs.alejandra.defaultPackage.${system}
 
       #gameing?

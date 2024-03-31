@@ -32,6 +32,7 @@
       deng = {
         name = "deng";
         isNormalUser = true;
+        home = "/home/deng"; #default is /var/empty
         initialPassword = "123456789";
         description = "deng232";
         extraGroups = [
@@ -55,6 +56,7 @@
               inherit self inputs hostname primary_user;
             };
             modules = [
+
               ./modules/core
               home-manager.nixosModules.home-manager
               {
@@ -65,9 +67,9 @@
                     inherit inputs;
                   };
                   users.${primary_user.name} = {
-                    imports = [ (import ./../home) ];
+                    imports = [ (import ./modules/home) ];
                     home.username = primary_user.name;
-                    home.homeDirectory = "/home/${primary_user.name}";
+                    home.homeDirectory = primary_user.home; # don't know why it conflict with /nixos/common.nix
                     home.stateVersion = "22.11";
                     programs.home-manager.enable = true;
                   };
