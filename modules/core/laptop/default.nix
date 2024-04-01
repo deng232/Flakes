@@ -1,7 +1,7 @@
 {...}:{
     imports = [
         ./bootloader.nix
-        #./hardware-configuration.nix
+        ./hardware-configuration.nix
         ./virtualization.nix
     ];
 
