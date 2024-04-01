@@ -1,4 +1,4 @@
-{ config, pkgs,primary_user }:
+{ self,config, pkgs,primary_user,... }:
 
 {
   # Add user to libvirtd group
