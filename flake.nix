@@ -1,4 +1,3 @@
-
 {
   # every new file created must be git at least
   # staged ortherwise no such file or directory error
@@ -21,18 +20,23 @@
   };
 
   outputs =
-    { nixpkgs, self,home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      self,
+      home-manager,
+      ...
+    }@inputs:
     let
       selfPkgs = import ./pkgs;
       system = "x86_64-linux";
       pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-  };
+        inherit system;
+        config.allowUnfree = true;
+      };
       deng = {
         name = "deng";
         isNormalUser = true;
-        home = "/home/deng"; #default is /var/empty
+        home = "/home/deng"; # default is /var/empty
         initialPassword = "123456789";
         description = "deng232";
         extraGroups = [
@@ -40,6 +44,7 @@
           "wheel"
         ];
         shell = pkgs.zsh;
+        packages = [pkgs.vscode]; # vscode in home-manager crash, config manage by shell.nix anyway
       };
     in
     {
@@ -53,7 +58,12 @@
           in
           nixpkgs.lib.nixosSystem {
             specialArgs = {
-              inherit self inputs hostname primary_user;
+              inherit
+                self
+                inputs
+                hostname
+                primary_user
+                ;
             };
             modules = [
 
@@ -77,10 +87,20 @@
               }
             ];
           }; # end of virtualbox
-          laptop = let hostname = "laptop"; primary_user = deng; in
-           nixpkgs.lib.nixosSystem {
+
+        laptop =
+          let
+            hostname = "laptop";
+            primary_user = deng;
+          in
+          nixpkgs.lib.nixosSystem {
             specialArgs = {
-              inherit self inputs hostname primary_user;
+              inherit
+                self
+                inputs
+                hostname
+                primary_user
+                ;
             };
             modules = [
               ./modules/core
