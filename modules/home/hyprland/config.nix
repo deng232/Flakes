@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland = {
     extraConfig = "
       $mainMod = SUPER
-      monitor=,preferred,auto,auto
+      monitor=,3840x2160@60,auto,auto
 
 
       input {
