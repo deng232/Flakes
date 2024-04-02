@@ -2,7 +2,6 @@
 { hostname,primary_user, ... }:
 {
   imports = [
-    ./hardware.nix
     ./xserver.nix
     ./steam.nix
     ./network.nix

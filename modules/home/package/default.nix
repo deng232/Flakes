@@ -33,7 +33,7 @@
       discord
       eza #ls replacement
       inputs.alejandra.defaultPackage.${system}
-
+      libsecret #gnume secrete storage
       #gameing?
       #proton-ge-bin
     ]);

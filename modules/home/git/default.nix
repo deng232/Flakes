@@ -2,5 +2,9 @@
   programs.git.enable = true;
   programs.git.userName = "deng232";
   programs.git.userEmail = "deng232@purdue.edu";
-  home.packages = [ pkgs.gh ];
+  programs.git.extraConfig = {
+    credential.helper = "${
+      pkgs.git.override {withLibsecret = true;}
+    }/bin/git-credential-libsecret";
+  };
 }
