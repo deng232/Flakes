@@ -5,15 +5,6 @@
       $mainMod = SUPER
       monitor=,preferred,auto,auto
 
-
-      input {
-          kb_layout = us
-          numlock_by_default = true
-          follow_mouse = 1
-          sensitivity = 0
-      }
-
-
       misc {
           disable_autoreload = true
           disable_hyprland_logo = true
@@ -24,66 +15,6 @@
           swallow_regex =
           focus_on_activate = true
       }
-
-
-      general {
-          gaps_in = 6
-          gaps_out = 10
-          border_size = 2
-          col.active_border = rgba(595959ff)
-          col.inactive_border = rgba(00140e10)
-          apply_sens_to_raw = 1
-      }
-
-
-      dwindle {
-          no_gaps_when_only = false
-          force_split = 0
-          special_scale_factor = 0.8
-          split_width_multiplier = 1.0
-          use_active_for_splits = true
-          pseudotile = yes
-          preserve_split = yes
-      }
-
-
-      master {
-          new_is_master = true
-          special_scale_factor = 1
-          no_gaps_when_only = false
-      }
-
-
-      decoration {
-          rounding = 0
-
-
-          active_opacity = 0.8500;
-          inactive_opacity = 0.76;
-
-          blur {
-
-            enabled = true
-            size = 2
-            passes = 2
-            new_optimizations = true
-
-          }
-
-          drop_shadow = 0
-      }
-
-
-      animations {
-          enabled=1
-          bezier = overshot, 0.13, 0.99, 0.29, 1.1
-          animation = windows, 1, 4, overshot, slide
-          animation = windowsOut, 1, 5, default, popin 80%
-          animation = border, 1, 5, default
-          animation = fade, 1, 8, default
-          animation = workspaces, 1, 6, overshot, slidevert
-      }
-
 
       # ----------------------------------------------------------------
       # keybindings
