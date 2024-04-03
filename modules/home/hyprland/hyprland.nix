@@ -6,7 +6,13 @@
     swww
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     hyprpicker
-    wofi
+    #wofi
+
+    gtk-layer-shell
+    gtk3
+    nwg-drawer
+
+
     rofi-wayland
     wlogout
     grim
