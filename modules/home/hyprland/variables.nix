@@ -2,7 +2,7 @@
 
 {
   home.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
+    #NIXOS_OZONE_WL = "1";
     __GL_GSYNC_ALLOWED = "0";
     __GL_VRR_ALLOWED = "0";
     _JAVA_AWT_WM_NONEREPARENTING = "1";
@@ -25,5 +25,7 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "matrix-gtk";
+    GDK_SCALE = "2";
+    XCURSOR_SIZE = "32";
   };
 }

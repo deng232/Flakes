@@ -44,7 +44,7 @@
           "wheel"
         ];
         shell = pkgs.zsh;
-        packages = [pkgs.vscode]; # vscode in home-manager crash, config manage by shell.nix anyway
+       
       };
     in
     {

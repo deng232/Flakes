@@ -3,7 +3,7 @@
   imports = [
     ./waybar
     ./firefox
-    #./vscode
+    ./vscode
     ./chromium
     ./hyprland
      # ./gaming

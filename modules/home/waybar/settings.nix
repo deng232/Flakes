@@ -7,9 +7,10 @@
       "position" = "top";
       modules-left = [
         "custom/launcher"
-        "wlr/workspaces"
+        "hyprland/workspaces"
         "temperature"
-        "idle_inhibitor"
+        #"idle_inhibitor" dont know what it is 
+        "hyprland/workspaces"
       ];
       modules-center = [
         "clock"
@@ -19,11 +20,9 @@
         "pulseaudio#microphone"
         "memory"
         "cpu"
-        "disk"
-        # "keyboard-state"
         "network"
-        "cava"
-        "tray"
+        "cava" # an audio visualizer, dont' kow it work or not
+        "tray" # don't know what it is
       ];
       "custom/launcher" = {
         "format" = " ";
@@ -48,7 +47,7 @@
         "format" = " ﴔ ";
         "tooltip" = false;
       };
-      "wlr/workspaces" = {
+      "hyprland/workspaces" = {
         "format" = "{icon}";
         "on-click" = "activate";
       };

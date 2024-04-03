@@ -13,6 +13,7 @@
     ./system.nix
     ./wayland.nix
     ./cloudflare-warp.nix
+    ./bluetooth.nix
     (./. + "/${hostname}")
   ];
   users.users.${primary_user.name} = primary_user;
