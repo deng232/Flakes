@@ -10,7 +10,7 @@
     ./git
     ./foot
     ./swaylock
-    #./wofi
+    ./rofi
     ./zsh
     ./gtk
     ./mako

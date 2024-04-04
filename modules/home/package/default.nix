@@ -27,7 +27,8 @@
       bleachbit # A program to clean your computer
       imv #A command line image viewer for tiling window managers
 
- 
+      htop
+      #libsensors # cpu temperature for htop, working even without installed???
       btop # A monitor of resourecs, don't know if gpu really work
       nvtopPackages.full # gpu monitor
       #pkgs.kdePackages.plasma-systemmonitor don't work
@@ -39,7 +40,10 @@
       eza #ls replacement
       inputs.alejandra.defaultPackage.${system}
       libsecret #gnume secrete storage
-      #gameing?
-      #proton-ge-bin
+
+      #docker
+      docker-client
+      docker-compose
+      lazydocker
     ]);
 }
