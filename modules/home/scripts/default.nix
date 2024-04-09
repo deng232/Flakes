@@ -61,7 +61,7 @@
   '';
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" ''
     wallpaper_folder=$HOME/Pictures/wallpapers
-    wallpaper_location="$(ls $wallpaper_folder | wofi -n --show dmenu)"
+    wallpaper_location="$(ls $wallpaper_folder | rofi -n --show dmenu)"
     if [[ -d $wallpaper_folder/$wallpaper_location ]]; then
         wallpaper_temp="$wallpaper_location"
     elif [[ -f $wallpaper_folder/$wallpaper_location ]]; then

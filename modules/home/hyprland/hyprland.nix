@@ -6,7 +6,7 @@
     swww
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     hyprpicker
-    #wofi
+
 
     wlogout
     grim

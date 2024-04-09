@@ -9,7 +9,7 @@
         "custom/launcher"
         "hyprland/workspaces"
         "temperature"
-        #"idle_inhibitor" dont know what it is 
+        #"idle_inhibitor" dont know what it is
         "hyprland/workspaces"
       ];
       modules-center = [
@@ -26,7 +26,7 @@
       ];
       "custom/launcher" = {
         "format" = " ";
-        "on-click" = "pkill wofi || wofi";
+        "on-click" = "pkill rofi || rofi";
         "tooltip" = false;
       };
       "idle_inhibitor" = {

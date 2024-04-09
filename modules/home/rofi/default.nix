@@ -1,7 +1,11 @@
 {pkgs,...}:{
   programs.rofi = {
     enable = true;
-    configPath = "./rofi/files/launchers/type-3/style-3.rasi";
     package = pkgs.rofi-wayland;
+
+    configPath = (./. + "/config.rasi");
+    theme = builtins.path {path = ./. + "/theme"; recursive=true; };
   };
-}
+
+}    #configPath = builtins.path { path = ./. + "/config.rasi";};
+  #xdg.configFile."rofi".source =

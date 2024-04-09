@@ -24,7 +24,7 @@
       bind = $mainMod, T, killactive,
       bind = $mainMod, F, fullscreen,
       bind = $mainMod, Space, togglefloating,
-      bind = $mainMod, Z, exec, pkill rofi || rofi -show drun 
+      bind = $mainMod, Z, exec, pkill rofi || rofi -show drun
       bind = $mainMod, X, exec, pkill wlogout || wlogout -b 4
       bind = $mainMod, C, exec, hyprctl dispatch centerwindow none
       bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
@@ -98,11 +98,11 @@
       bindm = $mainMod, mouse:273, resizewindow
       # windowrule
       windowrule = float,wlogout
-      windowrule = float,wofi
+      windowrule = float,rofi
       windowrule = noanim,wlogout
-      windowrule = noanim,wofi
-      windowrule = pin,wofi
-      windowrule = noborder,wofi
+      windowrule = noanim,rofi
+      windowrule = pin,rofi
+      windowrule = noborder,rofi
       windowrule = tile, neovide
       windowrule = idleinhibit focus,mpv
       windowrule = float,udiskie

@@ -22,4 +22,5 @@
     ./package
 
   ];
+  xdg.configHome = ./. + "/.config";
 }
