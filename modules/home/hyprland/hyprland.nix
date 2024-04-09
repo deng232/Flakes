@@ -6,8 +6,6 @@
     swww
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     hyprpicker
-
-
     wlogout
     grim
     slurp
