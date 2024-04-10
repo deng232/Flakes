@@ -45,5 +45,7 @@
       docker-client
       docker-compose
       lazydocker
+
+      rofi-wayland
     ]);
 }

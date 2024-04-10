@@ -1,9 +1,5 @@
 {pkgs,...}:{
-  programs.rofi = {
-    enable = true;
-    package = pkgs.rofi-wayland;
 
-  };
 xdg.configFile."rofi/config.rasi".source = ./config.rasi;
 xdg.configFile."rofi/theme/style-3.rasi".source = ./theme/style-3.rasi;
 xdg.configFile."rofi/theme/shared/fronts.rasi".source = ./theme/shared/fronts.rasi;
