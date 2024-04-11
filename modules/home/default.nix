@@ -20,6 +20,7 @@
     ./wlogout
     ./nvim
     ./package
+    ./fonts
 
   ];
   #xdg.configHome = ./. + "/.config";
