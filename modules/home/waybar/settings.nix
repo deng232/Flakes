@@ -1,4 +1,4 @@
-{ ... }:
+{... }:
 {
 
   programs.waybar.settings = [
@@ -12,23 +12,17 @@
         #"idle_inhibitor" dont know what it is
         "hyprland/workspaces"
       ];
-      modules-center = [
-        "clock"
-      ];
+      modules-center = [ "clock" ];
       modules-right = [
         "pulseaudio"
         "pulseaudio#microphone"
         "memory"
         "cpu"
         "network"
+        "battery"
         "cava" # an audio visualizer, dont' kow it work or not
         "tray" # don't know what it is
       ];
-      "custom/launcher" = {
-        "format" = " ";
-        "on-click" = "pkill rofi || rofi";
-        "tooltip" = false;
-      };
       "idle_inhibitor" = {
         "format" = "{icon}";
         "format-icons" = {
@@ -56,7 +50,11 @@
         "format" = "{icon} {volume}%";
         "format-muted" = "󰸈 Muted";
         "format-icons" = {
-          "default" = [ "" "" "󱄠" ];
+          "default" = [
+            ""
+            ""
+            "󱄠"
+          ];
         };
         "on-click" = "pamixer -t";
         "on-click-right" = "pavucontrol";
@@ -119,12 +117,40 @@
         "waves" = false;
         "noise_reduction" = 0.77;
         "input_delay" = 2;
-        "format-icons" = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+        "format-icons" = [
+          "▁"
+          "▂"
+          "▃"
+          "▄"
+          "▅"
+          "▆"
+          "▇"
+          "█"
+        ];
         "on-click-right" = "playerctl play-pause";
       };
       "tray" = {
         "icon-size" = 12;
         "spacing" = 5;
+      };
+
+      "battery" = {
+        "bat" ="BAT0";
+        "adapter" = "ADP1";
+        "interval" = 60;
+        "states" = {
+          "warning" = 30;
+          "critical" = 15;
+        };
+        "format" = "{capacity}% {icon}";
+        "format-icons" = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
+        "max-length" = 25;
       };
     }
   ];

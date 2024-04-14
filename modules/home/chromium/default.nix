@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.chromium = {
     enable = true;
-    commandLineArgs = ["--ozone-platform=wayland"]
+    commandLineArgs = ["--ozone-platform=wayland"];
   };
 }
