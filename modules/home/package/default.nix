@@ -11,7 +11,6 @@
       typescript
       ripgrep
       rustup
-      #vscode
 
       # others
       openssl
@@ -27,7 +26,6 @@
       bleachbit # A program to clean your computer
       imv #A command line image viewer for tiling window managers
 
-      htop
       #libsensors # cpu temperature for htop, working even without installed???
       btop # A monitor of resourecs, don't know if gpu really work
       nvtopPackages.full # gpu monitor
