@@ -3,7 +3,7 @@
 , ...
 }: {
   home.packages = with pkgs; [
-    swww
+    swww #wallpaper
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     hyprpicker
     wlogout
@@ -15,6 +15,7 @@
     glib
     wayland
     direnv
+
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
   wayland.windowManager.hyprland = {

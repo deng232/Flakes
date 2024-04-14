@@ -5,7 +5,7 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = "ondemand";
   hardware.nvidia = {
     prime = {
       offload.enable = true;
