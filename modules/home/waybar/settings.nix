@@ -94,6 +94,7 @@
         "format-alt" = "  {bandwidthUpBytes}    {bandwidthDownBytes}";
         "format-disconnected" = "󰣼 Disconnected";
         "tooltip" = false;
+        "on-click" = "foot -e nmtui";
       };
       "temperature" = {
         "tooltip" = false;
