@@ -91,7 +91,7 @@
       "network" = {
         "interval" = 1;
         "format" = "󰣺 Connected";
-        "format-alt" = "  {bandwidthUpBytes}    {bandwidthDownBytes}";
+        #"format-alt" = "  {bandwidthUpBytes}    {bandwidthDownBytes}";
         "format-disconnected" = "󰣼 Disconnected";
         "tooltip" = false;
         "on-click" = "foot -e nmtui";

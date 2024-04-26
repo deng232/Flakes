@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland = {
     extraConfig = "
       $mainMod = SUPER
-      monitor=,preferred,auto,1
+      monitor=,preferred,auto,auto
 
       misc {
           disable_autoreload = true
@@ -14,6 +14,7 @@
           enable_swallow = true
           swallow_regex =
           focus_on_activate = true
+          vfr = true
       }
 
       # ----------------------------------------------------------------
@@ -126,7 +127,7 @@
 
 
       # autostart
-      exec-once = hyprctl setcursor Catppuccin-Frappe-Dark 16
+      #exec-once = hyprctl setcursor Catppuccin-Frappe-Dark 16  # gpu power usage problem
       exec-once = systemctl --user import-environment &
       exec-once = hash dbus-update-activation-environment 2>/dev/null &
       exec-once = dbus-update-activation-environment --systemd &

@@ -6,6 +6,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    lowLatency.enable = true;
+    #lowLatency.enable = true; might related to nix-gaming
   };
 }

@@ -60,16 +60,16 @@
         inactive_opacity = 0.76;
         drop_shadow = false;
         dim_inactive =true;
-        blur = {
-          enabled = true;
-            size = 2;
-            passes = 2;
-          noise = 0.01;
-          contrast = 0.9;
-          brightness = 0.8;
-          popups = true;
+       # blur = {
+       #   enabled = true;
+       #     size = 2;
+       #     passes = 2;
+        #  noise = 0.01;
+        #  contrast = 0.9;
+        #  brightness = 0.8;
+        #  popups = true;
 
-        };
+        #};
       };
       animations = {
         enabled = true;
@@ -86,7 +86,6 @@
        gestures = {
         workspace_swipe = true;
         workspace_swipe_forever = true;
-        workspace_swipe_numbered = true;
       };
 
       general = {

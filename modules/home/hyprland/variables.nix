@@ -25,8 +25,8 @@
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "matrix-gtk";
-    GDK_SCALE = "2";
-    XCURSOR_SIZE = "32";
+    #GDK_SCALE = "2";
+    #XCURSOR_SIZE = "32";
     #LIBVA_DRIVER_NAME="nvidia"; not sure these are needed
     #GBM_BACKEND ="nvidia-drm";
     #__GLX_VENDOR_LIBRARY_NAME="nvidia";
