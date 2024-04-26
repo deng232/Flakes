@@ -4,7 +4,6 @@
 , inputs
 , ...
 }: {
-  imports = [ inputs.nix-gaming.nixosModules.pipewireLowLatency ];
   nix = {
     settings = {
       auto-optimise-store = true;

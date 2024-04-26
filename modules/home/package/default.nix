@@ -36,7 +36,7 @@
       ffmpeg
       discord
       eza #ls replacement
-      inputs.alejandra.defaultPackage.${system}
+      #inputs.alejandra.defaultPackage.${system}
       libsecret #gnume secrete storage
 
       #docker

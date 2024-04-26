@@ -20,6 +20,7 @@
       nixpkgs,
       self,
       home-manager,
+      nixos-cosmic,
       ...
     }@inputs:
     let
