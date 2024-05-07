@@ -16,13 +16,14 @@
       options = "--delete-older-than 7d";
     };
   };
+  /*
   nixpkgs = {
     overlays = [
       self.overlays.default
       inputs.nur.overlay
     ];
   };
-
+*/
   environment.systemPackages = with pkgs; [
     wget
     git

@@ -5,7 +5,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
-    
+
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
@@ -21,11 +21,10 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      self,
-      home-manager,
-      ...
+    { nixpkgs
+    , self
+    , home-manager
+    , ...
     }@inputs:
     let
       selfPkgs = import ./pkgs;
@@ -45,8 +44,29 @@
           "wheel"
         ];
         shell = pkgs.zsh;
-       
       };
+      shared_module_settings = inputs: primary_user: [
+
+        ./modules/core
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useUserPackages = true;
+            useGlobalPkgs = true;
+            extraSpecialArgs = {
+              inherit inputs;
+            };
+            users.${primary_user.name} = {
+              imports = [ (import ./modules/home) ];
+              home.username = primary_user.name;
+              home.homeDirectory = primary_user.home; # don't know why it conflict with /nixos/common.nix
+              home.stateVersion = "22.11";
+              programs.home-manager.enable = true;
+            };
+          };
+        }
+      ];
+
     in
     {
       overlays.default = selfPkgs.overlay;
@@ -66,27 +86,7 @@
                 primary_user
                 ;
             };
-            modules = [
-
-              ./modules/core
-              home-manager.nixosModules.home-manager
-              {
-                home-manager = {
-                  useUserPackages = true;
-                  useGlobalPkgs = true;
-                  extraSpecialArgs = {
-                    inherit inputs;
-                  };
-                  users.${primary_user.name} = {
-                    imports = [ (import ./modules/home) ];
-                    home.username = primary_user.name;
-                    home.homeDirectory = primary_user.home; # don't know why it conflict with /nixos/common.nix
-                    home.stateVersion = "22.11";
-                    programs.home-manager.enable = true;
-                  };
-                };
-              }
-            ];
+            modules = shared_module_settings inputs primary_user;
           }; # end of virtualbox
 
         laptop =
@@ -103,32 +103,28 @@
                 primary_user
                 ;
             };
-            modules = [
-              ./modules/core
-              home-manager.nixosModules.home-manager
-              {
-                home-manager = {
-                  useUserPackages = true;
-                  useGlobalPkgs = true;
-                  extraSpecialArgs = {
-                    inherit inputs;
-                  };
-                  users.${primary_user.name} = {
-                    imports = [ (import ./modules/home) ];
-                    home.username = primary_user.name;
-                    home.homeDirectory = primary_user.home; # don't know why it conflict with /nixos/common.nix
-                    home.stateVersion = "22.11";
-                    programs.home-manager.enable = true;
-                  };
-                };
-              }
-            ];
+            modules = shared_module_settings inputs primary_user;
           }; # end of laptop
+
+        desktop =
+          let
+            hostname = "desktop";
+            primary_user = deng;
+          in
+          nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit
+                self
+                inputs
+                hostname
+                primary_user
+                ;
+            };
+            modules = shared_module_settings inputs primary_user;
+          }; # end of desktop
+
 
       }; # end of nixosConfig
 
-      #import ./modules/core/default.nix {
-      #  inherit self nixpkgs inputs username email initialPassword;
-      #};
     };
 }

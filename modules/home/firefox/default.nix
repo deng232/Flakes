@@ -60,6 +60,7 @@
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
             "browser.compactmode.show" = true;
           };
+          /*
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             ublock-origin
             # duckduckgo-privacy-essentials
@@ -68,6 +69,7 @@
             tabliss
             videospeed
           ];
+          */
           userChrome = builtins.readFile userChrome;
         };
       };

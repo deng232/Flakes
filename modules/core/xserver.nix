@@ -2,7 +2,6 @@
   services.xserver = {
     enable = true;
     xkb.layout = "us";
-    #videoDrivers = [ "amdgpu" ];
     displayManager.autoLogin = {
       enable = true;
       user = primary_user.name;

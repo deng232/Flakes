@@ -8,17 +8,12 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   powerManagement.cpuFreqGovernor = "ondemand";
   hardware.nvidia = {
-    prime = {
-      offload.enable = true;
-      offload.enableOffloadCmd = true;
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
+
 
     modesetting.enable = true;
     powerManagement = {
       enable = true;
-      finegrained = true;
+      #finegrained = true;
     };
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     open = false;
