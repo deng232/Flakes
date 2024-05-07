@@ -6,11 +6,9 @@
       "layer" = "top";
       "position" = "top";
       modules-left = [
-        "custom/launcher"
         "hyprland/workspaces"
         "temperature"
         #"idle_inhibitor" dont know what it is
-        "hyprland/workspaces"
       ];
       modules-center = [ "clock" ];
       modules-right = [
@@ -97,10 +95,8 @@
         "on-click" = "foot -e nmtui";
       };
       "temperature" = {
-        "tooltip" = false;
         "thermal-zone" = 2;
         "hwmon-path" = "/sys/class/hwmon/hwmon2/temp1_input";
-        "format" = " {temperatureC}°C";
       };
       "cava" = {
         "framerate" = 60;
@@ -135,24 +131,20 @@
         "spacing" = 5;
       };
 
-      "battery" = {
-        "bat" ="BAT0";
-        "adapter" = "ADP1";
-        "interval" = 60;
-        "states" = {
-          "warning" = 30;
-          "critical" = 15;
-        };
-        "format" = "{capacity}% {icon}";
-        "format-icons" = [
-          ""
-          ""
-          ""
-          ""
-          ""
-        ];
-        "max-length" = 25;
-      };
+    "battery"= {
+        "format"= "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}";
+        "format-icons"= [""  ""  ""  ""  ""];
+        "format-time"= "{H}h{M}m";
+        "format-charging"= "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}";
+        "format-full"= "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged";
+        "interval"= 30;
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+        "on-click": "2"
+    }
     }
   ];
 }
