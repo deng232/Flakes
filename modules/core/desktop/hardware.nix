@@ -12,7 +12,7 @@
 
     modesetting.enable = true;
     powerManagement = {
-      enable = true;
+      enable = false;
       #finegrained = true;
     };
     package = config.boot.kernelPackages.nvidiaPackages.stable;

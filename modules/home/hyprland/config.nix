@@ -125,15 +125,6 @@
       windowrulev2 = idleinhibit focus, class:^(mpv)$
       windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
 
-
-      # autostart
-      #exec-once = hyprctl setcursor Catppuccin-Frappe-Dark 16  # gpu power usage problem
-      exec-once = systemctl --user import-environment &
-      exec-once = hash dbus-update-activation-environment 2>/dev/null &
-      exec-once = dbus-update-activation-environment --systemd &
-      exec-once = swww init && swaylock && notify-send 'Hey $USER, Welcome back' && load-env
-      exec-once = wl-paste --type text --watch cliphist store && wl-paste --type image --watch cliphist store && mako &
-      exec-once = waybar &
     ";
   };
 }

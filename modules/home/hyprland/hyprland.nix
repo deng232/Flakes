@@ -103,6 +103,7 @@
         "dbus-update-activation-environment --systemd &"
         " swww init && swaylock && notify-send 'Hey $USER, Welcome back' && load-env"
         "wl-paste --type text --watch cliphist store && wl-paste --type image --watch cliphist store && mako &"
+         "waybar &"
       ];
       xwayland = {
         force_zero_scaling = true;
