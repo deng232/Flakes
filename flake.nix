@@ -2,16 +2,30 @@
   # every new file created must be git at least
   # staged ortherwise no such file or directory error
   description = "Fahim's nixos configuration";
+
+  nixConfig = {
+    extra-substituters = [
+      "https://hyprland.cachix.org/"
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
+
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
 
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+    #alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     #nix-gaming.url = "github:fufexan/nix-gaming";
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -53,6 +67,7 @@
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
+            backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
             };

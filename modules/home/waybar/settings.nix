@@ -1,4 +1,4 @@
-{... }:
+{ ... }:
 {
 
   programs.waybar.settings = [
@@ -131,20 +131,20 @@
         "spacing" = 5;
       };
 
-    "battery"= {
-        "format"= "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}";
-        "format-icons"= [""  ""  ""  ""  ""];
-        "format-time"= "{H}h{M}m";
-        "format-charging"= "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}";
-        "format-full"= "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged";
-        "interval"= 30;
-        "states": {
-            "warning": 25,
-            "critical": 10
-        },
-        "tooltip": false,
-        "on-click": "2"
+      "battery" = {
+        "format" = "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}";
+        "format-icons" = [ "" "" "" "" "" ];
+        "format-time" = "{H}h{M}m";
+        "format-charging" = "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}";
+        "format-full" = "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged";
+        "interval" = 30;
+        "states" = {
+          "warning" = 25;
+          "critical" = 10;
+        };
+        "tooltip" = false;
+        "on-click" = "2";
+          };
+      }
+        ];
     }
-    }
-  ];
-}

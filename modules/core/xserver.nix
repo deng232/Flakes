@@ -1,17 +1,18 @@
-{ pkgs,primary_user, ... }: {
-  
+{ pkgs, primary_user, ... }: {
+
   services = {
-    xserver = {
-    enable = true;
-    xkb.layout = "us";
     libinput = {
       enable = true;
       mouse = {
         accelProfile = "flat";
       };
     };
-  };
-      displayManager.autoLogin = {
+    xserver = {
+      enable = true;
+      xkb.layout = "us";
+
+    };
+    displayManager.autoLogin = {
       enable = true;
       user = primary_user.name;
     };

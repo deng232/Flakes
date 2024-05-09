@@ -12,7 +12,7 @@
     ./services.nix
     ./system.nix
     ./wayland.nix
-    ./cloudflare-warp.nix
+    #./cloudflare-warp.nix
     ./bluetooth.nix
     (./. + "/${hostname}")
   ];

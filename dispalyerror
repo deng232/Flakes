@@ -1,0 +1,35 @@
+-- Boot 54730ed9d1d449268648eaaaaa590a53 --
+May 08 13:54:19 nixos systemd[1]: Starting Display Manager...
+May 08 13:54:19 nixos systemd[1]: Started Display Manager.
+May 08 13:54:26 nixos gdm-password][1783]: gkr-pam: unable to locate daemon control file
+May 08 13:54:26 nixos gdm-password][1783]: gkr-pam: stashed password to try later in open session
+May 08 13:54:26 nixos gdm-password][1783]: pam_unix(gdm-password:session): session opened for user deng(uid=1000) by (uid=0)
+May 08 13:54:26 nixos gdm-password][1783]: gkr-pam: gnome-keyring-daemon started properly and unlocked keyring
+May 08 13:54:28 nixos gdm[1175]: Gdm: Child process -1208 was already dead.
+May 08 14:11:56 nixos systemd[1]: display-manager.service: Deactivated successfully.
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Scheduled restart job, restart counter is at 1.
+May 08 14:11:57 nixos systemd[1]: Starting Display Manager...
+May 08 14:11:57 nixos lightdm[12545]: Error updating user /org/freedesktop/Accounts/User1000: GDBus.Error:org.freedesktop.Accounts.Error.PermissionDenied: Not authorized: GDBu>
+May 08 14:11:57 nixos display-manager[12545]: Failed to use bus name org.freedesktop.DisplayManager, do you have appropriate permissions?
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Main process exited, code=exited, status=1/FAILURE
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Killing process 12557 (lightdm) with signal SIGKILL.
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Failed with result 'exit-code'.
+May 08 14:11:57 nixos systemd[1]: Failed to start Display Manager.
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Triggering OnFailure= dependencies.
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Failed to enqueue OnFailure= job, ignoring: Unit plymouth-quit.service not found.
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Scheduled restart job, restart counter is at 2.
+May 08 14:11:57 nixos systemd[1]: Starting Display Manager...
+May 08 14:11:57 nixos lightdm[12591]: Error updating user /org/freedesktop/Accounts/User1000: GDBus.Error:org.freedesktop.Accounts.Error.PermissionDenied: Not authorized: GDBu>
+May 08 14:11:57 nixos lightdm[12621]: Error updating user /org/freedesktop/Accounts/User1000: GDBus.Error:org.freedesktop.Accounts.Error.PermissionDenied: Not authorized: GDBu>
+May 08 14:11:57 nixos systemd[1]: Started Display Manager.
+May 08 14:11:57 nixos lightdm[12621]: pam_unix(lightdm-autologin:session): session opened for user deng(uid=1000) by (uid=0)
+May 08 14:11:57 nixos lightdm[12621]: gkr-pam: gnome-keyring-daemon started properly
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Main process exited, code=exited, status=1/FAILURE
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Failed with result 'exit-code'.
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Triggering OnFailure= dependencies.
+May 08 14:11:57 nixos systemd[1]: display-manager.service: Failed to enqueue OnFailure= job, ignoring: Unit plymouth-quit.service not found.
+May 08 14:11:58 nixos systemd[1]: display-manager.service: Start request repeated too quickly.
+May 08 14:11:58 nixos systemd[1]: display-manager.service: Failed with result 'exit-code'.
+May 08 14:11:58 nixos systemd[1]: Failed to start Display Manager.
+May 08 14:11:58 nixos systemd[1]: display-manager.service: Triggering OnFailure= dependencies.
+May 08 14:11:58 nixos systemd[1]: display-manager.service: Failed to enqueue OnFailure= job, ignoring: Unit plymouth-quit.service not found.
