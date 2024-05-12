@@ -12,9 +12,16 @@
       xkb.layout = "us";
 
     };
-    displayManager.autoLogin = {
+    
+
+    displayManager = {
+      sddm.enable = true;
+      autoLogin = {
       enable = true;
       user = primary_user.name;
     };
+    };
+    
+    
   };
 }

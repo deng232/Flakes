@@ -27,6 +27,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    qemu
   ];
 
   time.timeZone = "America/Indianapolis";

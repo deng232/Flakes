@@ -25,7 +25,7 @@
     #alejandra.url = "github:kamadorueda/alejandra/3.0.0";
     #nix-gaming.url = "github:fufexan/nix-gaming";
     hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+      url = "github:hyprwm/Hyprland?ref=v0.40.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -67,7 +67,7 @@
           home-manager = {
             useUserPackages = true;
             useGlobalPkgs = true;
-            backupFileExtension = "backup";
+            #backupFileExtension = "backup";
             extraSpecialArgs = {
               inherit inputs;
             };
